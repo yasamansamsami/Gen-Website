@@ -1,0 +1,459 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    src: url(/static/data/proximanova_regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "Biro Script Plus";
+    src: url(/static/data/biroscriptplus.ttf);
+}
+
+body {
+    background-color: #f2f0e9;
+}
+
+a {
+    color: #f2f0e9;
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+
+a:hover {
+    font-size: 4.5vh;
+}
+
+#navbar-logo {
+    width:6%; 
+    margin: 1%;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+#navbar-logo:hover {
+    width: 7%;
+}
+
+.navbar {
+    position: fixed;
+    top:0;
+    width: 100vw;
+    height: 14vh;
+    background-color: #566449;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20vh;
+    z-index: 4;
+}
+
+.navbar-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: flex-start;
+}
+
+.navbar-links {
+    width: 40%;
+    font-family: 'Proxima Nova';
+    font-size: 4vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navbar-button-container {
+    width: 18vw;
+    height: 5vw;
+    margin-right: 1vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navbar-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f0e9;
+    border: none;
+    border-radius: 100%;
+    width: 4vw;
+    height: 4vw;
+    transition: all 0.2s linear;
+}
+
+.navbar-button:hover {
+    width: 5vw;
+    height: 5vw;
+}
+
+.navbar-button:active {
+    background-color: #f2f0e9;
+}
+
+.navbar-image {
+    width: 60%;
+    height: 60%;
+}
+
+.background{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.main {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#quote {
+    font-family: 'Biro Script Plus';
+}
+
+.main-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vw;
+    height: 30vh;
+    margin-top: 5vh;
+    text-align: center;
+}
+
+.main-button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 30vw; 
+    height: 10vh;
+}
+
+.main-contact-button {
+    background-color: #566449;
+    color: #f2f0e9;
+    font-family: 'Proxima Nova';
+    font-size: 3vh;
+    padding: 1vw;
+    border: none;
+    border-radius: 2vw;
+    transition: all 0.3s linear;
+}
+
+.main-contact-button:hover {
+    font-size: 3.6vh;
+    border-radius: 2.4vw;
+}
+
+.main-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    transition: all 0.5s;
+}
+
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.popup-content {
+    animation: fadeInFromTop 0.5s ease-out;
+    display: block;
+    width: 30vw;
+    height: 40vh;
+    background-color: #f2f0e9;
+    border-radius: 2vw;
+    padding: 1vw
+}
+
+.popup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 60%;
+    gap: 1vh;
+    margin-top: 3vh;
+}
+
+.form-field {
+    width: 80%;
+    height: 5vh;
+    font-family: 'Proxima Nova';
+    font-size: 2vh;
+    border: none;
+    border-radius: 1vw;
+    padding: 1vh;
+}
+
+.close {
+    position: relative;
+    left: 94%;
+    top: 1%;
+}
+
+#popup-text {
+    font-family: 'Proxima Nova';
+    font-size: 4vh;
+    width: max-content;
+}
+
+.popup-text-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-submit-button {
+    background-color: #566449;
+    color: #f2f0e9;
+    font-family: 'Proxima Nova';
+    font-size: 2.5vh;
+    padding: 1vw;
+    border: none;
+    border-radius: 2vw;
+    margin-top: 1.5vh;
+    transition: all 0.2s linear;
+}
+
+.popup-submit-button:hover {
+    font-size: 3vh;
+    border-radius: 2.4vw;
+}
+
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    background-color: #bab7ab;
+    border-radius: 3vw;
+    width: 95vw;
+    gap: 4vh;
+    padding-top: 3vh;
+    font-size: 3vh;
+}
+
+#services-title {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: #d5a12a;
+    color: #36443b;
+}
+
+.services-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+.service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 30vw;
+    height: 50vh;
+    background-color: #36443b;
+    border: #36443b solid 3px;
+    border-radius: 2vw;
+    padding: 2vw;
+    padding-top: 1vw;
+    margin-bottom: 1vw;
+    color: #bab7ab;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    transition: all 0.5s;
+}
+
+.service:hover {
+    transform: translateY(-7px);
+    box-shadow: 0px 10px 10px black;
+    border: #d5a12a solid 3px;
+}
+
+.service-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-end;
+    justify-content: space-between;
+    align-content: space-between;
+    gap: 1vh;
+    font-size: 2.5vh;
+    text-align: center;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    background-color: #bab7ab;
+    border-radius: 3vw;
+    width: 95vw;
+    gap: 4vh;
+    padding-top: 3vh;
+    padding-bottom: 5vh;
+    font-size: 3vh;
+}
+
+#reviews-title {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: #d5a12a;
+    color: #36443b;
+}
+
+/* From Uiverse.io by eduardo-amaro-maciel */ 
+.scroll-1::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.scroll-1::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: #f2f0e9;
+}
+
+.container * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    color: #f2f0e9;
+    font-family: Georgia, serif;
+}
+
+.container {
+    display: flex;
+    overflow-x: scroll;
+    padding: 24px;
+    width: 93vw;
+    scroll-snap-type: x mandatory;
+    scroll-padding-top: 24px;
+    border-radius: 8px;
+    gap: 20px;
+}
+
+.container .card {
+    display: flex;
+    flex: 0 0 30%;
+    overflow: hidden;
+    flex-direction: row;
+    border-radius: 8px;
+    background-color: #566449;
+    scroll-snap-align: start;
+}
+
+.card .card-image {
+    flex: 1;
+    height: 30vh;
+    width: 30%;
+    margin: 1vw;
+    border-radius: 3vw;
+}
+
+.card .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 1vh;
+    padding: 1vw;
+}
+
+.card .card-content .card-title {
+    font-size: 32px;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.card .card-content .card-describe {
+    color: #fff;
+    font-size: 16px;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20vh;
+    background-color: #bab7ab;
+    border-radius: 3vw;
+    width: 95vw;
+    gap: 4vh;
+    padding-top: 3vh;
+    font-size: 3vh;
+}
+
+#about-title {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: #d5a12a;
+    color: #36443b;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3vh;
+}
