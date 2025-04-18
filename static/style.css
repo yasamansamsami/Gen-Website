@@ -6,12 +6,12 @@
 
 @font-face {
     font-family: "Proxima Nova";
-    src: url(/static/data/proximanova_regular.ttf) format('truetype');
+    src: url(static/data/proximanova_regular.ttf) format('truetype');
 }
 
 @font-face {
     font-family: "Biro Script Plus";
-    src: url(/static/data/biroscriptplus.ttf);
+    src: url(static/data/biroscriptplus.ttf);
 }
 
 body {
