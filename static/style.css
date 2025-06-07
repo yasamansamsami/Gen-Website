@@ -54,6 +54,10 @@ a:hover {
     color: #ffffff;
 }
 
+button {
+  cursor: pointer;
+}
+
 .active {
     color: #ffffff;
     font-weight: bold;
