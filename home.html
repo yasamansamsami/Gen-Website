@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="static/script.js"></script>
+    <link rel="stylesheet" href="static/style.css">
+    <title>Daria Fedorova Genealogy</title>
+    <link rel="icon" type="image/png" href="static/data/small_logo.png">
+</head>
+<body>
+<div class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-links">
+            <a class="active" href="./home.html">Главная</a>
+            <a href="./about.html">О Нас</a>
+            <a href="./services.html">Услуги</a>
+            <a href="./reviews.html">Отзывы</a>
+            <a href="./contact.html">Контакты</a>
+        </div>
+    </div>
+</div>
+
+<div class="main">
+    <div class="home">
+        <div class="logo-container">
+            <img src="static/data/white_logo.png" id="logo">
+        </div>
+        <div class="main-text">
+            <div class="main-text-container">
+                <h1 id="quote" class="animate-on-scroll fade-in-up">"Без прошлого нет будущего. <br>Родословная — это нить, соединяющая поколения."</h1>
+                <h2 id="under-quote" class="animate-on-scroll fade-in-up">Поиск предков, составление родословного древа, генеалогические исследования</h2>
+            </div> 
+        </div>
+    </div>
+    <div class="main-button-container">
+        <button class="main-contact-button" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Заказать исследование</button>
+    </div>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()"><img src="static/data/cross.png" style="width: 1.5vw;"></span>
+        <div class="popup-text-box"><h1 id="popup-text">Оставьте заявку</h1></div>
+        <form class="popup-form" method="post" onsubmit="return handleSubmit(event)" enctype="multipart/form-data" accept-charset="UTF-8">
+            <input class="form-field" type="text" id="name" name="name" placeholder="Имя" required>
+            <input class="form-field" type="text" id="phone" name="phone" placeholder="Телефон" required>
+            <input class="form-field" type="text" id="email" name="email" placeholder="Email" required>
+            <button type="submit" class="popup-submit-button">Отправить</button>
+        </form>
+    </div>
+
+</div>
+
+<div class="about" id="about">
+    <div class="about-content">
+        <div class="about-text animate-on-scroll fade-in-up">
+            <h1>Мы - команда профессиональных генеалогов с 10-летним опытом, которые</h1>
+            <h1>искренне любят историю. Мы выполнили уже более 100 проектов, работая</h1>
+            <h1>с архивами в РФ, Казахстане, Украине, Белоруссии и других странах СНГ. </h1>
+        </div>
+        <div class="about-team-container">
+            <div class="about-team-member">
+                <img src="static/data/23.png" class="team-member-image">
+                <h2 class="team-member-name">Дарья Фёдорова</h2>
+                <p class="team-member-role">Основатель, <br>Управляющий партнер</p>
+            </div>
+            <div class="about-team-member">
+                <img src="static/data/22.png" class="team-member-image">
+                <h2 class="team-member-name">Екатерина Ткаченко</h2>
+                <p class="team-member-role">Партнер по развитию <br>и клиентскому сервису</p>
+            </div>
+            <div class="about-team-member">
+                <img src="static/data/24.png" class="team-member-image">
+                <h2 class="team-member-name">Михаил Мамаев</h2>
+                <p class="team-member-role">Геналог-куратор, <br>специализируется на <br>архивах СНГ</p>
+            </div>
+            <div class="about-team-member">
+                <img src="static/data/25.png" class="team-member-image">
+                <h2 class="team-member-name">Евгения Рожнова</h2>
+                <p class="team-member-role">Геналог-куратор, <br>специализируется на <br>архивах в России</p>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<div class="services" id="services">
+    <div class="services-content animate-on-scroll">
+        <div class="service">
+            <img src="static/data/1.png" class="service-icon">
+            <div class="service-container">
+                <h2 class="service-title">ГЕНЕАЛОГИЧЕСКИЙ ПОИСК</h2>
+                <div class="service-text">
+                    <p>Исследование рода и восстановление истории семьи до 1700 года:</p>
+                    <ul>
+                        <li>Мы найдем ваших предков</li>
+                        <li>Выстроим их в стройный ряд поколенной росписи и генеалогической схемы</li>
+                        <li>Узнаем подробности их жизни</li>
+                        <li>Напишем о них книгу</li>
+                    </ul>
+                </div>  
+            </div>  
+        </div>
+        <div class="service">
+            <img src="static/data/2.png" class="service-icon">
+            <div class="service-container">
+                <h2 class="service-title">НАЦИОНАЛЬНЫЕ КОРНИ</h2>
+                <div class="service-text">
+                    <p>Для тех, кто знает или подозревает, что в его роду были предки других национальностей. Если это так, при определённых условиях у вас есть возможность эмигрировать на родину ваших предков.
+                        Обычно это такие страны, как Израиль, Германия, Польша, Эстония, Латвия, Литва.</p>
+                </div>
+            </div> 
+        </div>
+        <div class="service">
+            <img src="static/data/3.png" class="service-icon">
+            <div class="service-container">
+                <h2 class="service-title">ВОЕННЫЙ ПОИСК</h2>
+                <div class="service-text">
+                    <p>Восстановление боевого пути и судьбы пропавшего без вести предка.</p>
+                    <p>Речь об участниках Первой мировой войны или Второй мировой войны.</p>
+                </div>
+            </div>
+        </div>
+        <div class="service">
+            <img src="static/data/4.png" class="service-icon">
+            <div class="service-container">
+                <h2 class="service-title">ПОИСК РЕПРЕССИРОВАННОГО</h2>
+                <div class="service-text">
+                    <p>Если в вашем роду были репрессированные и вы хотите узнать их судьбу.</p>
+                    <p>Кроме копий документов, которые мы найдем в соответствующих архивах, вы получите очерк об историческом контексте тех событий, которые произошли с репрессированным.</p>
+                </div>
+            </div>
+        </div>
+        <div class="service">
+            <img src="static/data/5.png" class="service-icon">
+            <div class="service-container">
+                <h2 class="service-title">ПОИСК С СОПРОВОЖДЕНИЕМ</h2>
+                <div class="service-text">
+                    <p>Подходит для тех, кто в самом начале пути поиска корней и составления родословной.</p>
+                    <p>А также тем, кому нужен ориентир, совет о том, куда двигаться на любом этапе и виде генеалогического поиска.</p> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact" id="contact">
+    <div class="contact-content">
+        <div clas="contact-button-container">
+            <button class="contact-button" >Запишитесь на консультацию любым удобным способом</button>
+        </div>
+        <div class="contact-info">
+            <a class="contact-method" href='mailto:dariafedorova.genealogy@gmail.com', target="_blank">
+                <div class="contact-icon" id="mail-icon"></div>
+                <p>Написать на почту</p>
+            </a>
+            <button class="contact-method" onclick="window.open('https://wa.me/+905488306082')">
+                <div class="contact-icon" id="whatsapp-icon"></div>
+                <p>Связаться в чате</p>
+            </button>
+            <button class="contact-method" onclick="window.open('https://www.instagram.com/fedorova_genealog/')">
+                <img src="static/data/chat_icon.png" class="contact-icon">
+                <p>Наши соцсети</p>
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-logo-container">
+            <img src="static/data/white_logo.png" class="footer-logo">
+        </div>
+</div>
+
+</div>
+</body>
+</html>

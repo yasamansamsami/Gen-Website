@@ -1,37 +1,47 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-  
-        const targetId = this.getAttribute("href").substring(1);
-        const targetElement = document.getElementById(targetId);
-  
-        if (targetElement) {
-          const headerOffset = 80; // Adjust if you have a fixed header
-          const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerOffset;
-  
-          window.scrollTo({
-            top: elementPosition,
-            behavior: "smooth",
-          });
-        }
-      });
-    });
-  });
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
 
-document.addEventListener("DOMContentLoaded", function () {
-    const logo = document.getElementById("navbar-logo");
-    if (logo) {
-        logo.addEventListener("click", function (e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            const target = entry.target;
+
+            // 1. Individual elements (e.g. .fade-in-up, .zoom-in)
+            if (
+                target.classList.contains('animate-on-scroll') &&
+                !target.classList.contains('services-content') &&
+                !target.classList.contains('reviews')
+            ) {
+                target.classList.add('animate');
+            }
+
+            // 2. Services - slide in from left
+            if (target.classList.contains('services-content')) {
+                const services = target.querySelectorAll('.service');
+                services.forEach((service, index) => {
+                    setTimeout(() => {
+                        service.classList.add('animate');
+                    }, index * 150); // stagger delay
+                });
+            }
+
+            // 3. Reviews - fade in up one by one
+            if (target.classList.contains('reviews')) {
+                const reviewItems = target.querySelectorAll('.review');
+                reviewItems.forEach((review, index) => {
+                    review.style.animationDelay = `${index * 150}ms`;
+                    review.classList.add('animate');
+                });
+            }
+
+            observer.unobserve(target); // Trigger only once
         });
-    }
-});
+    });
 
+    // Observe all relevant elements
+    const targets = document.querySelectorAll('.animate-on-scroll, .services-content, .reviews');
+    targets.forEach(el => observer.observe(el));
+});
+  
 function contactButton() {
     document.getElementById("popup").style.display = "flex";
 }
