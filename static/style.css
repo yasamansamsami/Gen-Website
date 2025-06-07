@@ -1076,7 +1076,7 @@ a:hover {
         display: flex;
         flex-direction: column;
         margin-top: 7vh;
-        margin-left: 7vw;
+        margin-left: 0vw;
     }
 
     .footer-logo {
