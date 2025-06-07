@@ -46,10 +46,10 @@ function copyEmail() {
     const email = "dariafedorova.genealogy@gmail.com";
     navigator.clipboard.writeText(email)
       .then(() => {
-        alert("Email address copied to clipboard!");
+        alert("Адрес электронной почты скопирован в буфер обмена!");
       })
       .catch(err => {
-        alert("Failed to copy email: " + err);
+        alert("Не удалось скопировать адрес электронной почты: " + err);
       });
 }
 
