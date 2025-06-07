@@ -41,7 +41,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const targets = document.querySelectorAll('.animate-on-scroll, .services-content, .reviews');
     targets.forEach(el => observer.observe(el));
 });
-  
+
+function copyEmail() {
+    const email = "dariafedorova.genealogy@gmail.com";
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        alert("Email address copied to clipboard!");
+      })
+      .catch(err => {
+        alert("Failed to copy email: " + err);
+      });
+}
+
 function contactButton() {
     document.getElementById("popup").style.display = "flex";
 }
